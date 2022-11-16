@@ -32,7 +32,8 @@ def scrape_courses(str_category,pages):
     course_enrolled = []
     course_rating = []
 
-    driver = webdriver.Chrome(executable_path='chromedriver.exe')
+    #driver = webdriver.Chrome(executable_path='chromedriver.exe')
+    driver = webdriver.Firefox(executable_path=r'C:\Users\cihan\Downloads\geckodriver.exe')
     c = str_category.replace(' ','%20')
     url = "https://www.coursera.org/search?query="+str(c)+"&page=1&index=prod_all_launched_products_term_optimization&entityTypeDescription=Courses"
     driver.get(url)
@@ -42,7 +43,8 @@ def scrape_courses(str_category,pages):
     driver.close()
     #  iterate through the pages
     for i in range(1,pages+1):
-        driver = webdriver.Chrome(executable_path='chromedriver.exe')
+        #driver = webdriver.Chrome(executable_path='chromedriver.exe')
+        driver = webdriver.Firefox(executable_path=r'C:\Users\cihan\Downloads\geckodriver.exe')
         url = "https://www.coursera.org/search?query="+str(c)+"&page="+str(i)+"&index=prod_all_launched_products_term_optimization&entityTypeDescription=Courses"
         driver.get(url)
         # Getting all the courses
@@ -66,7 +68,8 @@ def scrape_courses(str_category,pages):
             print(links)
         # iterate through the links to the courses
         for link in links:
-            driver1 = webdriver.Chrome(executable_path='chromedriver.exe')
+            #driver1 = webdriver.Chrome(executable_path='chromedriver.exe')
+            driver1 = webdriver.Firefox(executable_path=r'C:\Users\cihan\Downloads\geckodriver.exe')
             driver1.get(link)
             # get the element with the students enrolled
             elements = driver1.find_elements(By.XPATH, "//span[contains(text(), 'enrolled')]")
