@@ -9,9 +9,9 @@ from time import sleep
 import pandas as pd 
 
 
-import chromedriver_autoinstaller
-from selenium.webdriver.chrome.options import Options as ChromeOptions
-chromedriver_autoinstaller.install()  
+#import chromedriver_autoinstaller
+#from selenium.webdriver.chrome.options import Options as ChromeOptions
+#chromedriver_autoinstaller.install()  
 
 
 #str_category = "machine learning"
